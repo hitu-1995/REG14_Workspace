@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.cjc.util&apos; to &apos;07-Hibrnate-Crud-methods/src&apos;&#x0D;&#x0A;- Original project: &apos;06-Hibernate-Java-Based-Day2&apos;&#x0D;&#x0A;- Destination element: &apos;07-Hibrnate-Crud-methods/src&apos;&#x0D;&#x0A;- Original element: &apos;06-Hibernate-Java-Based-Day2/src/com.cjc.util&apos;" description="Copy package" destination="=07-Hibrnate-Crud-methods/src" element1="/src&lt;com.cjc.util" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1700908931381" version="1.0"/>
+</session>

@@ -1,0 +1,16 @@
+package com.cjc.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Product {
+
+	 @Id
+	 private int pid;
+	 private String pname;
+	 private String pcategory;
+	 private double pprice;
+	 
+	 
+}

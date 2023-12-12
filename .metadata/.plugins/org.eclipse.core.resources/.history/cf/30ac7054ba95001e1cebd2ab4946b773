@@ -1,0 +1,30 @@
+package com.cjc.main;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.cjc.config.HibernateConfig;
+import com.cjc.model.Product;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		insertProduct();
+	}
+
+	private static void insertProduct() {
+		Session session = HibernateConfig.getSessionFactory().openSession();
+	 
+	     Product product = new Product();
+	     product.setPid(114);
+	     product.setPname("Chair");
+	     product.setPcategory("Home Decor");
+	     product.setPprice(500);
+	     
+	     
+		session.save(product);
+		session.beginTransaction().commit();
+		System.out.println("Product Saved");
+	}
+}

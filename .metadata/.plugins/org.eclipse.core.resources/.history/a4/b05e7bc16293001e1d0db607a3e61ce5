@@ -1,0 +1,35 @@
+package com.cjc.main;
+
+import org.hibernate.Session;
+
+import com.cjc.model.Akurdi;
+import com.cjc.util.HibernateConfig;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		System.out.println("main---start");
+		
+		saveAkurdi();
+		
+		
+	}
+
+	private static void saveAkurdi() {
+		Session session = HibernateConfig.getSessionFactory().openSession();
+		
+		Akurdi akurdi = new Akurdi();
+		akurdi.setId(101);
+		akurdi.setCourse("Java");
+		akurdi.setFees(22000);
+		akurdi.setBatchId("REG14");
+		akurdi.setBatchType("Regular");
+		
+		session.save(akurdi);
+		
+		session.beginTransaction().commit();
+		
+		System.out.println("Akurdi Saved");
+	}
+}

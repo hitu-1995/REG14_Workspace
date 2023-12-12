@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=01-Collection-Day1/C:\/Program Files\/Java\/jre1.8.0_241\/lib\/rt.jar=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.util(ArrayList.class[ArrayList" modifiers="33" timestamp="1608561554365"/>
+<typeInfo handle="=08-Hibernate-Cache-mechanism/D:\/software\/hibernate-release-5.2.17.Final\/lib\/optional\/ehcache\/hibernate-ehcache-5.2.17.Final.jar&lt;org.hibernate.cache.ehcache(EhCacheRegionFactory.class[EhCacheRegionFactory" modifiers="33" timestamp="1524720984000"/>
+<typeInfo handle="=05-Hibernate-AnnotationBased-Day1/D:\/software\/hibernate-release-5.2.17.Final\/lib\/required\/hibernate-core-5.2.17.Final.jar&lt;org.hibernate.dialect(MySQL5Dialect.class[MySQL5Dialect" modifiers="33" timestamp="1524720966000"/>
+</typeInfoHistroy>

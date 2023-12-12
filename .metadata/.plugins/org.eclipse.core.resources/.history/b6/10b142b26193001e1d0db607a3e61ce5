@@ -1,0 +1,11 @@
+package com.cjc.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Karvenagar {
+
+		  private String batchId;
+	      private String batchType;
+}
+

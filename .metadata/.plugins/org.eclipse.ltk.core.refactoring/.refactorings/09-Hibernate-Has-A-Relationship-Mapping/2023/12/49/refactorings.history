@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static void getEmployee()&apos; from &apos;com.cjc.main.Test.main()&apos; to &apos;com.cjc.main.Test&apos;&#x0D;&#x0A;- Original project: &apos;09-Hibernate-Has-A-Relationship-Mapping&apos;&#x0D;&#x0A;- Method name: &apos;getEmployee&apos;&#x0D;&#x0A;- Destination type: &apos;com.cjc.main.Test&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;getEmployee&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;com.cjc.main{Test.java" name="getEmployee" replace="false" selection="230 436" stamp="1701687495181" version="1.0" visibility="2"/>
+</session>

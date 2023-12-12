@@ -1,0 +1,16 @@
+package com.cjc.config;
+
+import java.util.Map;
+
+import org.hibernate.SessionFactory;
+
+public class HibernateConfig {
+
+	  private static SessionFactory factory;
+	  
+	  
+	public static SessionFactory getSessionFactory() {
+
+	
+	}
+}

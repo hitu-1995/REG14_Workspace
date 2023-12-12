@@ -1,0 +1,10 @@
+package com.cjc.config;
+
+import org.hibernate.SessionFactory;
+
+public class HibernateConfig {
+
+	public static SessionFactory getSessionFactory() {
+
+	}
+}

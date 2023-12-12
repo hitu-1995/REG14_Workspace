@@ -1,0 +1,9 @@
+package com.cjc.model;
+
+public class CJC {
+
+	 private int id;
+	 private String course;
+	 private double fees;
+	 
+}

@@ -1,0 +1,26 @@
+package com.cjc.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Karvenagar extends CJC{
+
+	private String batchId;
+	private String batchType;
+	
+	
+	public String getBatchId() {
+		return batchId;
+	}
+	public void setBatchId(String batchId) {
+		this.batchId = batchId;
+	}
+	public String getBatchType() {
+		return batchType;
+	}
+	public void setBatchType(String batchType) {
+		this.batchType = batchType;
+	}
+	
+	
+}

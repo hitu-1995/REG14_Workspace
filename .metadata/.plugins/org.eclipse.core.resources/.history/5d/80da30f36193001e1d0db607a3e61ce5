@@ -1,0 +1,16 @@
+package com.cjc.main;
+
+import org.hibernate.Session;
+
+import com.cjc.util.HibernateConfig;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		System.out.println("main---start");
+		
+		Session session = HibernateConfig.getSessionFactory().openSession();
+		
+	}
+}

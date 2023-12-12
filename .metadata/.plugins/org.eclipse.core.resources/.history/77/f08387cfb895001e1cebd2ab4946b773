@@ -1,0 +1,35 @@
+package com.cjc.config;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Environment;
+
+public class HibernateConfig {
+
+	  private static SessionFactory factory;
+	  
+	  
+	public static SessionFactory getSessionFactory() {
+
+		 if(factory==null) {
+			 
+			 Map<String, Object> setting = new HashMap<String, Object>();
+			 setting.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
+			 setting.put(Environment.URL, "jdbc:mysql://localhost:3306/reg14");
+			 setting.put(Environment.USER, "root");
+			 setting.put(Environment.PASS, "root");
+			 setting.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
+			 setting.put(Environment.HBM2DDL_AUTO, "create");
+			 setting.put(Environment.SHOW_SQL, true);
+			 
+			 
+			 
+						
+				 
+			 
+		 }
+	
+	}
+}

@@ -1,0 +1,119 @@
+package com.cjc.main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.cjc.model.Employee;
+import com.cjc.model.Laptop;
+import com.cjc.util.HibernateConfig;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+      insertEmployee();
+	
+	}
+
+	private static void getLaptop() {
+		Session session = HibernateConfig.getSessionFactory().openSession();
+	    
+	    Laptop laptop = session.get(Laptop.class, 1);
+	
+	    System.out.println(laptop.getLid());
+	    System.out.println(laptop.getLname());
+	    System.out.println(laptop.getPrice());
+	    
+	}
+
+	private static void getEmployee() {
+		Session session = HibernateConfig.getSessionFactory().openSession();
+		System.out.println("---------------------------------------------------");
+		Employee employee = session.get(Employee.class, 101);
+		
+		System.out.println(employee.getEid());
+		System.out.println(employee.getEname());
+		System.out.println(employee.getDept());
+		
+		List<Laptop> list = employee.getLaptops();
+		
+		for(Laptop lap : list) {
+			System.out.println("-------------------------------------");
+			System.out.println(lap);
+		}
+
+	}
+
+	private static void insertEmployee() {
+		
+        Laptop laptop1 = new  Laptop();
+        laptop1.setLid(1);
+        laptop1.setLname("HP");
+        laptop1.setPrice(44000);
+        
+        Laptop laptop2 = new  Laptop();
+        laptop2.setLid(2);
+        laptop2.setLname("Asus");
+        laptop2.setPrice(32000);
+        
+        Laptop laptop3 = new  Laptop();
+        laptop3.setLid(3);
+        laptop3.setLname("DELL");
+        laptop3.setPrice(24000);
+        
+
+        
+        Employee employee1 = new Employee();
+        employee1.setEid(101);
+        employee1.setEname("Dhoni");
+        employee1.setDept("Admin");
+        
+        
+        Employee employee2 = new Employee();
+        employee2.setEid(102);
+        employee2.setEname("Rohit");
+        employee2.setDept("HR");
+        
+
+        
+        
+        List<Laptop> lapList1 = new ArrayList<Laptop>();
+        lapList1.add(laptop1);
+        lapList1.add(laptop2);
+        
+        List<Laptop> lapList2 = new ArrayList<Laptop>();
+        lapList2.add(laptop2);
+        lapList2.add(laptop3);
+        
+        
+        List<Employee> empList1 = new ArrayList<Employee>();
+        empList1.add(employee1);
+        
+        List<Employee> empList2 = new ArrayList<Employee>();
+        empList2.add(employee1);
+        empList2.add(employee2);
+        
+        
+            laptop1.setEmployees(empList1);
+            laptop2.setEmployees(empList2);
+            laptop3.setEmployees(empList1);
+            
+            employee1.setLaptops(lapList1);
+            employee2.setLaptops(lapList2);
+            
+            
+	     
+	    Session session =  HibernateConfig.getSessionFactory().openSession();
+	      
+	    Transaction tx = session.beginTransaction();
+	    
+	       session.saveOrUpdate(employee1);
+	       session.saveOrUpdate(employee2);
+	       
+	            tx.commit();
+	    System.out.println("Saved....");
+	}
+}

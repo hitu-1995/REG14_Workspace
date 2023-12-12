@@ -1,0 +1,4 @@
+1702033737433	Extract method 'insertProduct'
+1702034086221	Extract method 'getAllProducts'
+1702034625032	Extract method 'getSingleProduct'
+1702034958903	Extract method 'updateProduct'

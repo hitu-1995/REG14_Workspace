@@ -1,0 +1,93 @@
+package com.cjc.main;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import com.cjc.config.HibernateConfig;
+import com.cjc.model.Product;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+
+		  Session session = HibernateConfig.getSessionFactory().openSession();
+		  session.createQuery("delete From Product where pid = :id");
+	}
+
+
+
+
+
+
+
+
+
+
+	private static void updateProduct() {
+		Session session = HibernateConfig.getSessionFactory().openSession();
+		  Transaction tx = session.beginTransaction();
+		  Query query = session.createQuery("update Product set pcategory = :ct where pid = :id ");
+		  query.setParameter("ct", "Interior");
+		  query.setParameter("id", 114);
+		  
+		  query.executeUpdate();
+		  
+		  tx.commit();
+		  
+		  System.out.println("Updated..................");
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	private static void getSingleProduct() {
+		Session session = HibernateConfig.getSessionFactory().openSession();
+
+		Query query = session.createQuery("from Product where pid = ?");
+
+		query.setParameter(0, 111);
+
+		Object object = query.getSingleResult();
+		Product product = (Product) object;
+		System.out.println(product);
+	}
+
+	private static void getAllProducts() {
+		Session session = HibernateConfig.getSessionFactory().openSession();
+
+		Query query = session.createQuery("FROM Product");
+		// select * from Product;
+
+		List<Product> list = query.getResultList();
+
+		for (Product product : list) {
+			System.out.println("----------------------------------");
+			System.out.println(product);
+		}
+	}
+
+	private static void insertProduct() {
+		Session session = HibernateConfig.getSessionFactory().openSession();
+
+		Product product = new Product();
+		product.setPid(114);
+		product.setPname("Chair");
+		product.setPcategory("Home Decor");
+		product.setPprice(500);
+
+		session.save(product);
+		session.beginTransaction().commit();
+		System.out.println("Product Saved");
+	}
+}
